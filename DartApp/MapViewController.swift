@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  DartApp
 //
 //  Created by Ally Mahmoud on 8/30/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
