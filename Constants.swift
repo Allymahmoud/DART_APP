@@ -11,13 +11,12 @@ import Foundation
 struct Constants {
     
     struct API {
-        static let BaseUrl = "https://okomaz-ios.firebaseio.com/"
-        static let ClientUrl = "https://okomaz-ios.firebaseio.com/clients.json"
+        static let BaseUrl = "https://dartapp-8afdf.firebaseio.com/"
+        static let ClientUrl = "https://dartapp-8afdf.firebaseio.com/users.json"
         static let ChannelsUrl = "https://okomaz-ios.firebaseio.com/channels.json"
         static let DustbinCodeUrl = "https://okomaz-ios.firebaseio.com/dustbincode.json"
         static let LinersCodeUrl = "https://okomaz-ios.firebaseio.com/linerscode.json"
         
-        static let SinchApplicationKey = "db76e2e7-6d9f-4da4-91bb-2000ee8bdc81"
     }
     
     struct HttpHeaderKeys {

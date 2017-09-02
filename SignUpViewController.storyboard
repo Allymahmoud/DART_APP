@@ -38,7 +38,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rdg-kj-baj">
                                 <rect key="frame" x="62" y="406" width="251" height="30"/>
@@ -47,7 +47,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="az8-yF-C2Y">
                                 <rect key="frame" x="62" y="444" width="251" height="30"/>
@@ -56,7 +56,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0z0-jn-mRr">
                                 <rect key="frame" x="62" y="498" width="251" height="30"/>
@@ -81,11 +81,11 @@
                             <constraint firstItem="0z0-jn-mRr" firstAttribute="leading" secondItem="qFw-aL-ZrR" secondAttribute="leading" id="6ot-L6-Db8"/>
                             <constraint firstItem="0z0-jn-mRr" firstAttribute="trailing" secondItem="qFw-aL-ZrR" secondAttribute="trailing" id="9mN-2Z-zcn"/>
                             <constraint firstItem="qFw-aL-ZrR" firstAttribute="centerX" secondItem="081-pM-4Qv" secondAttribute="centerX" id="Ab0-o0-dex"/>
-                            <constraint firstItem="qFw-aL-ZrR" firstAttribute="top" secondItem="BV6-qE-Pob" secondAttribute="bottom" constant="310" id="C9a-jY-UfB"/>
                             <constraint firstItem="rdg-kj-baj" firstAttribute="leading" secondItem="qFw-aL-ZrR" secondAttribute="leading" id="COs-Us-IXx"/>
                             <constraint firstItem="0z0-jn-mRr" firstAttribute="top" secondItem="az8-yF-C2Y" secondAttribute="bottom" constant="24" id="FcH-dP-lZ9"/>
                             <constraint firstItem="rdg-kj-baj" firstAttribute="trailing" secondItem="qFw-aL-ZrR" secondAttribute="trailing" id="Fjo-QO-0tV"/>
                             <constraint firstItem="kVW-PZ-lw6" firstAttribute="trailing" secondItem="qFw-aL-ZrR" secondAttribute="trailing" id="Q2p-VW-94E"/>
+                            <constraint firstItem="NxJ-bZ-dnk" firstAttribute="top" secondItem="0z0-jn-mRr" secondAttribute="bottom" constant="139" id="Q9f-TV-JN2"/>
                             <constraint firstItem="az8-yF-C2Y" firstAttribute="leading" secondItem="qFw-aL-ZrR" secondAttribute="leading" id="Ute-H5-UPg"/>
                             <constraint firstItem="kVW-PZ-lw6" firstAttribute="top" secondItem="qFw-aL-ZrR" secondAttribute="bottom" constant="8" id="oyC-iK-kNO"/>
                             <constraint firstItem="az8-yF-C2Y" firstAttribute="top" secondItem="rdg-kj-baj" secondAttribute="bottom" constant="8" id="wRf-mV-sDC"/>
