@@ -40,6 +40,8 @@
 		A036794E1F5A78CC00A4D845 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036794D1F5A78CC00A4D845 /* LoginRequest.swift */; };
 		A03679521F5A944100A4D845 /* EmailUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679511F5A944100A4D845 /* EmailUtil.swift */; };
 		A03679541F5AB22900A4D845 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679531F5AB22900A4D845 /* MainViewController.swift */; };
+		A036796F1F5BF82D00A4D845 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036796E1F5BF82D00A4D845 /* UserTableViewController.swift */; };
+		A03679711F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679701F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		A036794D1F5A78CC00A4D845 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		A03679511F5A944100A4D845 /* EmailUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailUtil.swift; sourceTree = "<group>"; };
 		A03679531F5AB22900A4D845 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A036796E1F5BF82D00A4D845 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		A03679701F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameAndPictureTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,8 @@
 			children = (
 				A03679271F57BA7200A4D845 /* UserViewController.swift */,
 				A03679291F57BA8B00A4D845 /* UserViewController.storyboard */,
+				A03679701F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift */,
+				A036796E1F5BF82D00A4D845 /* UserTableViewController.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -413,8 +419,10 @@
 				A03679281F57BA7200A4D845 /* UserViewController.swift in Sources */,
 				A036791C1F57B9EE00A4D845 /* LoginViewController.swift in Sources */,
 				A03679261F57BA5400A4D845 /* TicketViewController.swift in Sources */,
+				A036796F1F5BF82D00A4D845 /* UserTableViewController.swift in Sources */,
 				A03679431F583BB600A4D845 /* SignUpServiceDelegate.swift in Sources */,
 				A03679451F5A77DA00A4D845 /* AccessTokenService.swift in Sources */,
+				A03679711F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift in Sources */,
 				A03678FD1F56DB6A00A4D845 /* MapViewController.swift in Sources */,
 				A03678FB1F56DB6A00A4D845 /* AppDelegate.swift in Sources */,
 				A036793B1F57DBDE00A4D845 /* TimeUtil.swift in Sources */,
