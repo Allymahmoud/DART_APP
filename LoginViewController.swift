@@ -10,7 +10,10 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate, AccessTokenServiceDelegate, LoginServiceDelegate {
+    
+    
 
+    @IBOutlet weak var bgImage: UIImageView!
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var email: UITextField!
@@ -31,6 +34,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AccessTokenSer
         loginService = LoginService()
         loginService.loginServiceDelegate = self
         accessTokenService.isTokenValid()
+        //self.bgImage.addBlurEffect()
     }
 
     
@@ -132,3 +136,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AccessTokenSer
     }
 
 }
+extension UIImageView
+{
+    func addBlurEffect()
+    {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        self.addSubview(blurEffectView)
+    }
+}
+

@@ -42,6 +42,9 @@
 		A03679541F5AB22900A4D845 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679531F5AB22900A4D845 /* MainViewController.swift */; };
 		A036796F1F5BF82D00A4D845 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036796E1F5BF82D00A4D845 /* UserTableViewController.swift */; };
 		A03679711F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679701F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift */; };
+		A03679731F5D242A00A4D845 /* TicketDisplaytViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679721F5D242A00A4D845 /* TicketDisplaytViewController.swift */; };
+		A03679751F5DD9FC00A4D845 /* TicketDisplayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03679741F5DD9FC00A4D845 /* TicketDisplayViewController.storyboard */; };
+		A03679771F5DF0D100A4D845 /* TicketDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679761F5DF0D100A4D845 /* TicketDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		A03679531F5AB22900A4D845 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A036796E1F5BF82D00A4D845 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		A03679701F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameAndPictureTableViewCell.swift; sourceTree = "<group>"; };
+		A03679721F5D242A00A4D845 /* TicketDisplaytViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketDisplaytViewController.swift; sourceTree = "<group>"; };
+		A03679741F5DD9FC00A4D845 /* TicketDisplayViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TicketDisplayViewController.storyboard; sourceTree = "<group>"; };
+		A03679761F5DF0D100A4D845 /* TicketDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +185,9 @@
 		A036790E1F56DB9F00A4D845 /* Ticket */ = {
 			isa = PBXGroup;
 			children = (
+				A03679781F5DF59400A4D845 /* TicketDisplay */,
 				A03679231F57BA4500A4D845 /* TicketViewController.storyboard */,
+				A03679721F5D242A00A4D845 /* TicketDisplaytViewController.swift */,
 				A03679251F57BA5400A4D845 /* TicketViewController.swift */,
 			);
 			name = Ticket;
@@ -279,6 +287,15 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		A03679781F5DF59400A4D845 /* TicketDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				A03679741F5DD9FC00A4D845 /* TicketDisplayViewController.storyboard */,
+				A03679761F5DF0D100A4D845 /* TicketDisplayViewController.swift */,
+			);
+			name = TicketDisplay;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,6 +368,7 @@
 				A03679141F56E1D400A4D845 /* Assets.xcassets in Resources */,
 				A03679001F56DB6A00A4D845 /* MapViewController.storyboard in Resources */,
 				A036793D1F57E4FB00A4D845 /* GoogleService-Info.plist in Resources */,
+				A03679751F5DD9FC00A4D845 /* TicketDisplayViewController.storyboard in Resources */,
 				A036792C1F57BC3E00A4D845 /* CustomerServiceViewController.storyboard in Resources */,
 				A03679221F57BA2C00A4D845 /* SignUpViewController.storyboard in Resources */,
 			);
@@ -418,6 +436,7 @@
 				A036794E1F5A78CC00A4D845 /* LoginRequest.swift in Sources */,
 				A03679281F57BA7200A4D845 /* UserViewController.swift in Sources */,
 				A036791C1F57B9EE00A4D845 /* LoginViewController.swift in Sources */,
+				A03679731F5D242A00A4D845 /* TicketDisplaytViewController.swift in Sources */,
 				A03679261F57BA5400A4D845 /* TicketViewController.swift in Sources */,
 				A036796F1F5BF82D00A4D845 /* UserTableViewController.swift in Sources */,
 				A03679431F583BB600A4D845 /* SignUpServiceDelegate.swift in Sources */,
@@ -426,6 +445,7 @@
 				A03678FD1F56DB6A00A4D845 /* MapViewController.swift in Sources */,
 				A03678FB1F56DB6A00A4D845 /* AppDelegate.swift in Sources */,
 				A036793B1F57DBDE00A4D845 /* TimeUtil.swift in Sources */,
+				A03679771F5DF0D100A4D845 /* TicketDisplayViewController.swift in Sources */,
 				A03679411F583B8000A4D845 /* SignUpService.swift in Sources */,
 				A03679201F57BA2100A4D845 /* SignUpViewController.swift in Sources */,
 				A036794A1F5A785200A4D845 /* LoginService.swift in Sources */,
@@ -560,11 +580,13 @@
 			baseConfigurationReference = 59906CE033F0904598864363 /* Pods-DartApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FM2EY39XWE;
 				INFOPLIST_FILE = DartApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ally.DartApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -574,11 +596,13 @@
 			baseConfigurationReference = 284BF517967A5CEB8F5334F2 /* Pods-DartApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FM2EY39XWE;
 				INFOPLIST_FILE = DartApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ally.DartApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -30,14 +30,16 @@ enum Section: Int {
 }
 
 class UserTableViewController: UITableViewController {
-    var user: DartUser!
+    var user: DartUser = DartUser(name: "", email: "", password: "")
     var ref: DatabaseReference!
     var accessToken: AccessTokenService!
+    var selectedTicket: TripInfo!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference(fromURL: Constants.API.BaseUrl)
+        self.updateUserInfo()
 
 
         // Uncomment the following line to preserve selection between presentations
@@ -46,14 +48,32 @@ class UserTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        <#code#>
-    }
+    
+    
+    func updateUserInfo(){
+        if let user = Auth.auth().currentUser {
+            self.ref.child("DARTusers").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                // Get user value
+                let value = snapshot.value as? NSDictionary
+                if value != nil {
+                    self.user = DartUser.init(dictionary: value as! [String : AnyObject])
+                    self.tableView.reloadData()
+   
+                }
+                else{
+                    print("value found nil")
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        }
+   
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -69,7 +89,7 @@ class UserTableViewController: UITableViewController {
             case .BasicInfo:
                 return 1
             case .MainInfo:
-                return 4
+                return 5
             case .Balance:
                 return 1
             case .Email:
@@ -83,6 +103,45 @@ class UserTableViewController: UITableViewController {
             return 0
         }
     }
+    
+    //method to segue to a supplier controller upon selection of a supplier cell
+    override  func tableView(_ tableView: UITableView, didSelectRowAt
+        indexPath: IndexPath){
+        
+        switch (indexPath.section) {
+        case 0:
+            print("0")
+            
+        case 1:
+            print("1")
+        case 2:
+            print("2")
+        case 3:
+            print("3")
+        case 4:
+            print("4")
+            self.selectedTicket = self.user.travelHistory[indexPath.row]
+            self.performSegue(withIdentifier: "navToTicket", sender: nil)
+        case 5:
+            print("5")
+        default:
+            print("none")
+            
+        }
+     
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //pass token
+        
+        //temporary implementation to pass the title
+        let ticketDisplayViewController = segue.destination as! TicketDisplayViewController
+        ticketDisplayViewController.title = "Ticket Info"
+        ticketDisplayViewController.tripInfo = self.selectedTicket
+        ticketDisplayViewController.clientName = user.name!
+        
+    }
+
+
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,6 +151,7 @@ class UserTableViewController: UITableViewController {
         listOfUserInfo.append(Attribute(key: "Residence", value: self.user.residence!))
         listOfUserInfo.append(Attribute(key: "Region", value: self.user.region!))
         listOfUserInfo.append(Attribute(key: "Phone Number", value: self.user.phoneNumber!))
+        listOfUserInfo.append(Attribute(key: "Country of Origin", value: self.user.countryOfOrigin!))
         
         
         switch (indexPath.section) {
@@ -102,23 +162,40 @@ class UserTableViewController: UITableViewController {
             
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfo", for: indexPath)
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            cell.textLabel!.font = UIFont(name: "Helvetica", size: 13)!
+            cell.detailTextLabel!.font = UIFont(name: "Helvetica", size: 13)!
+            
             cell.textLabel?.text = listOfUserInfo[indexPath.row].key
             cell.detailTextLabel?.text = listOfUserInfo[indexPath.row].value
             
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Balance", for: indexPath)
-            cell.textLabel?.text = String(describing: user.balance)
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            cell.textLabel!.font = UIFont(name: "Helvetica", size: 13)!
+            if let balance = user.balance{
+                cell.textLabel?.text = String(describing: balance) + " " + "Tshs"
+                
+            }
+            
             
             return cell
             
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Balance", for: indexPath)
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            cell.textLabel!.font = UIFont(name: "Helvetica", size: 13)!
+            
             cell.textLabel?.text = user.email!
             
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfo", for: indexPath)
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            cell.textLabel!.font = UIFont(name: "Helvetica", size: 13)!
+            cell.detailTextLabel!.font = UIFont(name: "Helvetica", size: 13)!
+            
             cell.textLabel?.text = user.travelHistory[indexPath.row].station! + "-" + user.travelHistory[indexPath.row].destination!
             cell.detailTextLabel?.text = user.transactionHistory[indexPath.row].time
             
@@ -126,6 +203,10 @@ class UserTableViewController: UITableViewController {
             
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfo", for: indexPath)
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            cell.textLabel!.font = UIFont(name: "Helvetica", size: 13)!
+            cell.detailTextLabel!.font = UIFont(name: "Helvetica", size: 13)!
+            
             cell.textLabel?.text = user.transactionHistory[indexPath.row].time
             cell.detailTextLabel?.text = user.transactionHistory[indexPath.row].phoneNumber
             
@@ -133,58 +214,55 @@ class UserTableViewController: UITableViewController {
             
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfo", for: indexPath)
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            cell.textLabel!.font = UIFont(name: "Helvetica", size: 13)!
+            
             cell.textLabel?.text = "Other"
             
             return cell
         }
+    
             
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section
+        {
+        case 0:
+            return "Basic Info"
+        case 1:
+            return "Main info"
+        case 2:
+            return "Balance"
+        case 3:
+            return "Email"
+        case 4:
+            return "Travel History"
+        case 5:
+            return "Transaction History"
+            
+        default:
+            return "Other Section"
+        }
+
+    }
+    
+    
+    //method to adjust the rows' heights
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height:CGFloat = CGFloat()
+        if (indexPath as NSIndexPath).section == Section.BasicInfo.rawValue{
+            height = 108
+            
+        }
+        else{
+            height = 45
+            
+        }
+        return height
         
-            
     }
+    
  
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

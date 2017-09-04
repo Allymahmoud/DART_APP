@@ -105,6 +105,13 @@
                                 <rect key="frame" x="169" y="426" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DartApp" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-xG-fIU">
+                                <rect key="frame" x="41" y="108" width="292" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="KaO-CC-J2G"/>
+                                    <constraint firstAttribute="width" constant="292" id="piN-ww-Vfg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -119,9 +126,11 @@
                             <constraint firstItem="S8d-Yw-w4p" firstAttribute="centerX" secondItem="m9g-b1-mPb" secondAttribute="centerX" id="Htr-Sz-f45"/>
                             <constraint firstItem="ORd-he-TGO" firstAttribute="centerX" secondItem="m9g-b1-mPb" secondAttribute="centerX" id="Rel-v8-8PN"/>
                             <constraint firstItem="N30-Jt-VED" firstAttribute="top" secondItem="euH-RX-l4E" secondAttribute="bottom" constant="8" id="X7U-8y-EBD"/>
+                            <constraint firstItem="vTE-xG-fIU" firstAttribute="centerX" secondItem="m9g-b1-mPb" secondAttribute="centerX" id="d22-LI-djk"/>
                             <constraint firstItem="ORd-he-TGO" firstAttribute="top" secondItem="euH-RX-l4E" secondAttribute="bottom" constant="13" id="jgX-Od-hKL"/>
                             <constraint firstItem="euH-RX-l4E" firstAttribute="leading" secondItem="m9g-b1-mPb" secondAttribute="leadingMargin" constant="46" id="m6v-f7-25M"/>
                             <constraint firstItem="8kO-sR-IXi" firstAttribute="leading" secondItem="euH-RX-l4E" secondAttribute="leading" id="mVa-F8-3SM"/>
+                            <constraint firstItem="euH-RX-l4E" firstAttribute="top" secondItem="vTE-xG-fIU" secondAttribute="bottom" constant="64" id="pCM-Mh-CRH"/>
                             <constraint firstItem="oiq-qE-Dy6" firstAttribute="leading" secondItem="euH-RX-l4E" secondAttribute="leading" id="s8j-pH-t2Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="euH-RX-l4E" secondAttribute="trailing" constant="47" id="xK8-wC-RlP"/>
                         </constraints>
@@ -165,4 +174,7 @@
             <point key="canvasLocation" x="184.80000000000001" y="136.28185907046478"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DartApp" width="2100" height="1500"/>
+    </resources>
 </document>

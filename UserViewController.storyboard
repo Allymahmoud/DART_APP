@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="117.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_account_circle" translatesAutoresizingMaskIntoConstraints="NO" id="W53-EQ-t6b">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ally" translatesAutoresizingMaskIntoConstraints="NO" id="W53-EQ-t6b">
                                             <rect key="frame" x="28" y="13" width="90" height="90"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="90" id="1J6-gQ-9Ip"/>
@@ -104,13 +104,24 @@
                         </connections>
                     </tableView>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="9c7-zx-weQ" kind="show" identifier="navToTicket" id="FKG-f9-eAi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Id-en-6Ew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85.599999999999994" y="131.78410794602701"/>
         </scene>
+        <!--TicketDisplayViewController-->
+        <scene sceneID="6G1-jD-O56">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TicketDisplayViewController" id="9c7-zx-weQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gYu-rB-JWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842" y="131"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="ic_account_circle" width="24" height="24"/>
+        <image name="Ally" width="810" height="812"/>
     </resources>
 </document>

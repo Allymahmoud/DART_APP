@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: UIViewController, SignUpServiceDelegate {
+class SignUpViewController: UIViewController, SignUpServiceDelegate, UITextFieldDelegate{
     
     var signUpService: SignUpService!
     
@@ -90,6 +90,19 @@ class SignUpViewController: UIViewController, SignUpServiceDelegate {
         
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: email)
+    }
+    
+    //function to dismiss the keyboard when done editing
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.email.resignFirstResponder()
+        return true
+    }
+    
+    
+    //function to dissmiss the keyboard when a part of the screen is touched
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // TODO: Rather use the IQ Keyboard component
+        self.view.endEditing(true)
     }
     
 
