@@ -20,12 +20,26 @@
                     <view key="view" contentMode="scaleToFill" id="GIj-oT-cP0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBW-pK-J2G">
+                                <rect key="frame" x="150" y="318" width="75" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="F2s-jS-5RT" eventType="touchUpInside" id="7uk-Jx-xi4"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zBW-pK-J2G" firstAttribute="centerY" secondItem="GIj-oT-cP0" secondAttribute="centerY" id="Iye-yq-ppd"/>
+                            <constraint firstItem="zBW-pK-J2G" firstAttribute="centerX" secondItem="GIj-oT-cP0" secondAttribute="centerX" id="Ted-Hi-oXy"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tD-eg-aUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="123"/>
+            <point key="canvasLocation" x="101.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>

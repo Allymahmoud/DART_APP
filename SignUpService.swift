@@ -78,7 +78,7 @@ class SignUpService{
         doubleUploadHelperFunction(parameterName: "balance", doubleParameter: user.balance!)
         
         let testtransaction = Transaction(agent: "ally", phoneNumber: "78346", initialBalance: 200, amountAdded: 300)
-        let testTripInfo = TripInfo(station: "Mbezi", destination: "Kimaara", initialBalance: 1000, costOfTransaction: 650)
+        let testTripInfo = TripInfo(station: "Mbezi", destination: "Gerezani", initialBalance: 1000, costOfTransaction: 650, timeToLive: 3600, qrCode: TimeUtil.timeStamp())
         dictUploadHelperFunction(parameterName: "transactionHistory", dictParameter: testtransaction.toDict())
         dictUploadHelperFunction(parameterName: "travelHistory", dictParameter: testTripInfo.toDict())
         

@@ -8,10 +8,14 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-
+class SettingsViewController: UIViewController, LogoutServiceDelegate {
+    
+    var accessTokenService: AccessTokenService = AccessTokenService()
+    var logoutService: LogoutService!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.logoutService = LogoutService()
 
         // Do any additional setup after loading the view.
     }
@@ -21,15 +25,19 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func logout(_ sender: Any) {
+        self.logoutService.logout()
+            
     }
-    */
+    
+    func didLogoutSuccessfully() {
+        accessTokenService.deleteAccessToken()
+        self.dismiss(animated: true, completion: nil)
+    }
+    func failedToLogout(message: String) {
+        self.present(AlertUtil.errorAlert(title: "Could Not Logout", message: message), animated: true, completion: nil)
+    }
+
+    
 
 }
