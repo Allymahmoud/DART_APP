@@ -127,7 +127,7 @@ class TripInfo {
         
         self.ttl = timeToLive
         self.validFrom = TimeUtil.timeStamp()
-        self.validTo = TimeUtil.calculateTimeAfterSeconds(date: self.validFrom!, seconds: timeToLive)
+        self.validTo = TimeUtil.calculateTimeAfterSeconds(date: TimeUtil.timeStamp(), seconds: timeToLive)
         
         self.qrCode = qrCode
         self.latitude = 0.0

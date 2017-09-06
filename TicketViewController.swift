@@ -15,6 +15,7 @@ class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var pickerData: [String] = [String]()
     var updateUserInfoService: UpdateUserInfoService!
     var requestUserInfo: RequestUserInfo!
+    var numberOfUpdates: Int = 0
     
     @IBOutlet weak var balance: UILabel!
     @IBOutlet weak var station: UIPickerView!
@@ -105,7 +106,11 @@ class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func didSuccesfullyUpdateUserInfo() {
         print("successfuly updated trip info and balance")
-        self.performSegue(withIdentifier: "navToTicket", sender: nil)
+        self.numberOfUpdates += 1
+        if numberOfUpdates == 2{
+            self.performSegue(withIdentifier: "navToTicket", sender: nil)
+        }
+        
     }
     func failedToUpdateUserInfo(message: String) {
         self.present(AlertUtil.errorAlert(title: "Ooops! Something Went Wrong", message: message), animated: true, completion: nil)

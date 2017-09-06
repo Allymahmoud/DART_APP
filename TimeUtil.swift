@@ -12,9 +12,11 @@ struct TimeUtil {
     
     
     static func timeStamp() -> String{
-        let currentTime = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium) as String
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy, h:mm:ss a"
         
-        return currentTime
+        return dateFormatter.string(from: currentDate)
     }
     static func returnDate(stringDate: String) -> Date{
         
