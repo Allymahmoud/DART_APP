@@ -106,11 +106,20 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <segue destination="9c7-zx-weQ" kind="show" identifier="navToTicket" id="FKG-f9-eAi"/>
+                        <segue destination="mCl-iL-jKp" kind="show" identifier="navToPaymentOptions" id="TyC-58-JMV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Id-en-6Ew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85.599999999999994" y="131.78410794602701"/>
+        </scene>
+        <!--PayementOptionsViewController-->
+        <scene sceneID="zlL-Kz-8hq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PayementOptionsViewController" id="mCl-iL-jKp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X39-iM-0QE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="54"/>
         </scene>
         <!--TicketDisplayViewController-->
         <scene sceneID="6G1-jD-O56">

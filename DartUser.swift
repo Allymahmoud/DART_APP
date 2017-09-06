@@ -110,30 +110,42 @@ class TripInfo {
     var initialBalance: Double?
     var costOfTransaction: Double?
     var newBalance: Double?
-    var time: String?
+    var validFrom: String?
+    var validTo: String?
+    var ttl: Double?
+    var qrCode: String?
     var longitude: Double?
     var latitude: Double?
     
-    init(station: String, destination: String, initialBalance: Double, costOfTransaction: Double){
+    
+    init(station: String, destination: String, initialBalance: Double, costOfTransaction: Double, timeToLive: Double, qrCode: String){
         self.station = station
         self.destination = destination
         self.initialBalance = initialBalance
         self.costOfTransaction = costOfTransaction
         self.newBalance = initialBalance - costOfTransaction
-        self.time = TimeUtil.timeStamp()
         
+        self.ttl = timeToLive
+        self.validFrom = TimeUtil.timeStamp()
+        self.validTo = TimeUtil.calculateTimeAfterSeconds(date: self.validFrom!, seconds: timeToLive)
+        
+        self.qrCode = qrCode
         self.latitude = 0.0
         self.longitude = 0.0
     }
     
-    init(station: String, destination: String, initialBalance: Double, costOfTransaction: Double, lat: Double, long: Double){
+    init(station: String, destination: String, initialBalance: Double, costOfTransaction: Double, lat: Double, long: Double, timeToLive: Double, qrCode: String){
         self.station = station
         self.destination = destination
         
         self.initialBalance = initialBalance
         self.costOfTransaction = costOfTransaction
         self.newBalance = initialBalance - costOfTransaction
-        self.time = TimeUtil.timeStamp()
+        
+        self.ttl = timeToLive
+        self.validFrom = TimeUtil.timeStamp()
+        self.validTo = TimeUtil.calculateTimeAfterSeconds(date: self.validFrom!, seconds: timeToLive)
+        self.qrCode = qrCode
         
         self.latitude = lat
         self.longitude = long
@@ -146,7 +158,11 @@ class TripInfo {
         self.initialBalance = dictionary["initialBalance"] as? Double
         self.costOfTransaction = dictionary["costOfTransaction"] as? Double
         self.newBalance = dictionary["newbalance"] as? Double
-        self.time = dictionary["time"] as? String
+        
+        self.validFrom = dictionary["validFrom"] as? String
+        self.validTo = dictionary["validTo"] as? String
+        self.ttl = dictionary["ttl"] as? Double
+        self.qrCode = dictionary["qrCode"] as? String
         
         self.latitude = dictionary["latitude"] as? Double
         self.longitude = dictionary["longitude"] as? Double
@@ -162,7 +178,13 @@ class TripInfo {
         dictionary["initialBalance"] = self.initialBalance! as AnyObject
         dictionary["costOfTransaction"] = self.costOfTransaction! as AnyObject
         dictionary["newBalance"] = self.newBalance! as AnyObject
-        dictionary["time"] = self.time! as AnyObject
+        
+        
+        dictionary["validFrom"] = self.validFrom as AnyObject
+        dictionary["validTo"] = self.validTo as AnyObject
+        dictionary["ttl"] = self.ttl as AnyObject
+        dictionary["qrCode"] = self.qrCode as AnyObject
+        
         dictionary["latitude"] = self.latitude! as AnyObject
         dictionary["longitude"] = self.longitude! as AnyObject
         

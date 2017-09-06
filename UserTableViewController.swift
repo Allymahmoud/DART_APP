@@ -39,14 +39,12 @@ class UserTableViewController: UITableViewController {
         super.viewDidLoad()
         
         ref = Database.database().reference(fromURL: Constants.API.BaseUrl)
+        
+
+
+    }
+    override func viewDidAppear(_ animated: Bool) {
         self.updateUserInfo()
-
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     
@@ -115,7 +113,7 @@ class UserTableViewController: UITableViewController {
         case 1:
             print("1")
         case 2:
-            print("2")
+            self.performSegue(withIdentifier: "navToPaymentOptions", sender: nil)
         case 3:
             print("3")
         case 4:
@@ -132,12 +130,17 @@ class UserTableViewController: UITableViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //pass token
-        
-        //temporary implementation to pass the title
-        let ticketDisplayViewController = segue.destination as! TicketDisplayViewController
-        ticketDisplayViewController.title = "Ticket Info"
-        ticketDisplayViewController.tripInfo = self.selectedTicket
-        ticketDisplayViewController.clientName = user.name!
+        if segue.identifier == "navToTicket" {
+            
+            //temporary implementation to pass the title
+            let ticketDisplayViewController = segue.destination as! TicketDisplayViewController
+            ticketDisplayViewController.title = "Ticket Info"
+            ticketDisplayViewController.tripInfo = self.selectedTicket
+            ticketDisplayViewController.clientName = user.name!
+
+            
+        }
+
         
     }
 
@@ -191,13 +194,21 @@ class UserTableViewController: UITableViewController {
             
             return cell
         case 4:
+            user.travelHistory.sort { TimeUtil.returnDate(stringDate: $0.validFrom!)  > TimeUtil.returnDate(stringDate: $1.validFrom!) }
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfo", for: indexPath)
-            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
             cell.textLabel!.font = UIFont(name: "Helvetica", size: 13)!
             cell.detailTextLabel!.font = UIFont(name: "Helvetica", size: 13)!
             
             cell.textLabel?.text = user.travelHistory[indexPath.row].station! + "-" + user.travelHistory[indexPath.row].destination!
-            cell.detailTextLabel?.text = user.transactionHistory[indexPath.row].time
+            cell.detailTextLabel?.text = user.travelHistory[indexPath.row].validFrom
+            
+            if TimeUtil.isValidTicket(oldDateString: user.travelHistory[indexPath.row].validFrom!, timeToLive: user.travelHistory[indexPath.row].ttl!){
+                cell.accessoryType = UITableViewCellAccessoryType.detailButton
+            }
+            else{
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            }
             
             return cell
             

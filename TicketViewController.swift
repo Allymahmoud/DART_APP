@@ -10,9 +10,11 @@ import UIKit
 import Firebase
 
 
-class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, RequestUserInfoDelegate, UpdateUserInfoServiceDelegate{
     
     var pickerData: [String] = [String]()
+    var updateUserInfoService: UpdateUserInfoService!
+    var requestUserInfo: RequestUserInfo!
     
     @IBOutlet weak var balance: UILabel!
     @IBOutlet weak var station: UIPickerView!
@@ -26,16 +28,18 @@ class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBOutlet weak var purchaseTicket: UIButton!
     
-    var user: DartUser = DartUser(name: "Ally", email: "dummy@dummy.com", password: "haha")
-    var ref: DatabaseReference!
-    var accessToken: AccessTokenService!
+    var user: DartUser = DartUser(name: "", email: "", password: "")
     var tripInfo: TripInfo!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref = Database.database().reference(fromURL: Constants.API.BaseUrl)
-        self.updateUserInfo()
+        self.requestUserInfo = RequestUserInfo()
+        self.requestUserInfo.requestUserInfoDelegate = self
+        
+        self.updateUserInfoService = UpdateUserInfoService()
+        self.updateUserInfoService.updateUserInfoServiceDelegate = self
+        
         
         self.station.tag = 0
         self.destination.tag = 1
@@ -78,43 +82,36 @@ class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.station.dataSource = self
         
         
-        
         self.destination.delegate = self
         self.destination.dataSource = self
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.requestUserInfo.requestUserInfo()
+    }
+    
     func configureTripInfo(){
-        self.tripInfo = TripInfo(station: from.text!, destination: toDestination.text!, initialBalance: 1000, costOfTransaction: 650)
+        self.tripInfo = TripInfo(station: from.text!, destination: toDestination.text!, initialBalance: self.user.balance!, costOfTransaction: 650, timeToLive: 3600, qrCode: TimeUtil.timeStamp())
         
     }
-    
-    func updateUserInfo(){
-        if let user = Auth.auth().currentUser {
-            self.ref.child("DARTusers").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                
-                // Get user value
-                let value = snapshot.value as? NSDictionary
-                if value != nil {
-                    self.user = DartUser.init(dictionary: value as! [String : AnyObject])
-                    self.configureUI()
-        
-                }
-                else{
-                    print("value found nil")
-                }
-                
-            }) { (error) in
-                print(error.localizedDescription)
-            }
-            
-        }
-        
+    func didRecieveUserInfo(user: DartUser) {
+        self.user = user
+        self.configureUI()
     }
-
+    func failedToRecieveUserInfo(message: String) {
+        self.present(AlertUtil.errorAlert(title: "Could Not Fetch User Info", message: message), animated: true, completion: nil)
+    }
+    
+    func didSuccesfullyUpdateUserInfo() {
+        print("successfuly updated trip info and balance")
+        self.performSegue(withIdentifier: "navToTicket", sender: nil)
+    }
+    func failedToUpdateUserInfo(message: String) {
+        self.present(AlertUtil.errorAlert(title: "Ooops! Something Went Wrong", message: message), animated: true, completion: nil)
+    }
     
 
-    
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -139,7 +136,6 @@ class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             if !(from.text! == toDestination.text!){
                 date.text = TimeUtil.timeStamp()
                 purchaseTicket.isEnabled = true
-                
             }
             else{
                 self.present(AlertUtil.errorAlert(title: "Could Not Perform Transaction", message: "station and destination cannnot be the same"), animated: true, completion: nil)
@@ -148,33 +144,27 @@ class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             }
             
         }
-
         
     }
     
    
     @IBAction func purchase(_ sender: Any) {
         
-        if self.user.balance! < 650 {
+        if self.user.balance! > 650 {
             self.configureTripInfo()
-            self.performSegue(withIdentifier: "navToTicket", sender: nil)
-            
-            
+            self.updateUserInfoService.updateUserBalance(balance: (self.user.balance! - 650))
+            self.updateUserInfoService.updateTravelHistory(tripInfo: self.tripInfo)
+     
         }else{
             if let balance = self.user.balance{
                 self.present(AlertUtil.errorAlert(title: "Could Not Perform Transaction", message: "Low balance of" + String(describing: balance) + " " + "Tshs"), animated: true, completion: nil)
-                
             }
-            
         }
-        
     }
     func configureUI(){
         if let balance = self.user.balance{
             self.balance.text = String(describing: balance) + " " + "Tshs"
         }
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -187,5 +177,4 @@ class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         ticketDisplayViewController.clientName = user.name!
         
     }
-
 }

@@ -42,9 +42,20 @@
 		A03679541F5AB22900A4D845 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679531F5AB22900A4D845 /* MainViewController.swift */; };
 		A036796F1F5BF82D00A4D845 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036796E1F5BF82D00A4D845 /* UserTableViewController.swift */; };
 		A03679711F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679701F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift */; };
-		A03679731F5D242A00A4D845 /* TicketDisplaytViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679721F5D242A00A4D845 /* TicketDisplaytViewController.swift */; };
 		A03679751F5DD9FC00A4D845 /* TicketDisplayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03679741F5DD9FC00A4D845 /* TicketDisplayViewController.storyboard */; };
 		A03679771F5DF0D100A4D845 /* TicketDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679761F5DF0D100A4D845 /* TicketDisplayViewController.swift */; };
+		A036797B1F5F993700A4D845 /* PayementOptionsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A036797A1F5F993700A4D845 /* PayementOptionsViewController.storyboard */; };
+		A036797D1F5F995200A4D845 /* PayementOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036797C1F5F995200A4D845 /* PayementOptionsTableViewController.swift */; };
+		A036797F1F5F9C7500A4D845 /* PaymentOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036797E1F5F9C7500A4D845 /* PaymentOptionTableViewCell.swift */; };
+		A03679821F5F9EC400A4D845 /* RequestUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679811F5F9EC400A4D845 /* RequestUserInfo.swift */; };
+		A03679841F5F9ED600A4D845 /* RequestUserInfoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679831F5F9ED600A4D845 /* RequestUserInfoDelegate.swift */; };
+		A036798B1F5FBC1E00A4D845 /* MpesaPayementViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A036798A1F5FBC1E00A4D845 /* MpesaPayementViewController.storyboard */; };
+		A036798D1F5FC8A100A4D845 /* MpesaPayementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036798C1F5FC8A100A4D845 /* MpesaPayementViewController.swift */; };
+		A03679911F5FCF6F00A4D845 /* UpdateUserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679901F5FCF6F00A4D845 /* UpdateUserInfoService.swift */; };
+		A03679931F5FCF8100A4D845 /* UpdateUserInfoServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679921F5FCF8100A4D845 /* UpdateUserInfoServiceDelegate.swift */; };
+		A03679951F5FDD0600A4D845 /* SelectAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679941F5FDD0600A4D845 /* SelectAmountViewController.swift */; };
+		A03679981F5FF20C00A4D845 /* LogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679971F5FF20C00A4D845 /* LogoutService.swift */; };
+		A036799A1F5FF21C00A4D845 /* LogoutServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03679991F5FF21C00A4D845 /* LogoutServiceDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,9 +98,20 @@
 		A03679531F5AB22900A4D845 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A036796E1F5BF82D00A4D845 /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		A03679701F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameAndPictureTableViewCell.swift; sourceTree = "<group>"; };
-		A03679721F5D242A00A4D845 /* TicketDisplaytViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketDisplaytViewController.swift; sourceTree = "<group>"; };
 		A03679741F5DD9FC00A4D845 /* TicketDisplayViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TicketDisplayViewController.storyboard; sourceTree = "<group>"; };
 		A03679761F5DF0D100A4D845 /* TicketDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketDisplayViewController.swift; sourceTree = "<group>"; };
+		A036797A1F5F993700A4D845 /* PayementOptionsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PayementOptionsViewController.storyboard; sourceTree = "<group>"; };
+		A036797C1F5F995200A4D845 /* PayementOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayementOptionsTableViewController.swift; sourceTree = "<group>"; };
+		A036797E1F5F9C7500A4D845 /* PaymentOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentOptionTableViewCell.swift; sourceTree = "<group>"; };
+		A03679811F5F9EC400A4D845 /* RequestUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestUserInfo.swift; sourceTree = "<group>"; };
+		A03679831F5F9ED600A4D845 /* RequestUserInfoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestUserInfoDelegate.swift; sourceTree = "<group>"; };
+		A036798A1F5FBC1E00A4D845 /* MpesaPayementViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MpesaPayementViewController.storyboard; sourceTree = "<group>"; };
+		A036798C1F5FC8A100A4D845 /* MpesaPayementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MpesaPayementViewController.swift; sourceTree = "<group>"; };
+		A03679901F5FCF6F00A4D845 /* UpdateUserInfoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInfoService.swift; sourceTree = "<group>"; };
+		A03679921F5FCF8100A4D845 /* UpdateUserInfoServiceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserInfoServiceDelegate.swift; sourceTree = "<group>"; };
+		A03679941F5FDD0600A4D845 /* SelectAmountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAmountViewController.swift; sourceTree = "<group>"; };
+		A03679971F5FF20C00A4D845 /* LogoutService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutService.swift; sourceTree = "<group>"; };
+		A03679991F5FF21C00A4D845 /* LogoutServiceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutServiceDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +146,7 @@
 		A03678EE1F56DB6A00A4D845 = {
 			isa = PBXGroup;
 			children = (
+				A03679801F5F9EA000A4D845 /* API */,
 				A03679121F56DC4A00A4D845 /* CustomerService */,
 				A03678F91F56DB6A00A4D845 /* DartApp */,
 				8240B986E0F9682C8BF62921 /* Frameworks */,
@@ -187,7 +210,6 @@
 			children = (
 				A03679781F5DF59400A4D845 /* TicketDisplay */,
 				A03679231F57BA4500A4D845 /* TicketViewController.storyboard */,
-				A03679721F5D242A00A4D845 /* TicketDisplaytViewController.swift */,
 				A03679251F57BA5400A4D845 /* TicketViewController.swift */,
 			);
 			name = Ticket;
@@ -196,6 +218,7 @@
 		A036790F1F56DBA600A4D845 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				A03679791F5F946300A4D845 /* PayementOptions */,
 				A03679271F57BA7200A4D845 /* UserViewController.swift */,
 				A03679291F57BA8B00A4D845 /* UserViewController.storyboard */,
 				A03679701F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift */,
@@ -216,6 +239,7 @@
 		A03679111F56DC4100A4D845 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A03679961F5FF1EB00A4D845 /* LogoutService */,
 				A036792F1F57BC6100A4D845 /* SettingsViewController.swift */,
 				A03679311F57BC8300A4D845 /* SettingsViewController.storyboard */,
 			);
@@ -296,6 +320,71 @@
 			name = TicketDisplay;
 			sourceTree = "<group>";
 		};
+		A03679791F5F946300A4D845 /* PayementOptions */ = {
+			isa = PBXGroup;
+			children = (
+				A03679861F5FBB5B00A4D845 /* MobilePayementOptions */,
+				A036797A1F5F993700A4D845 /* PayementOptionsViewController.storyboard */,
+				A036797C1F5F995200A4D845 /* PayementOptionsTableViewController.swift */,
+				A036797E1F5F9C7500A4D845 /* PaymentOptionTableViewCell.swift */,
+				A03679941F5FDD0600A4D845 /* SelectAmountViewController.swift */,
+			);
+			name = PayementOptions;
+			sourceTree = "<group>";
+		};
+		A03679801F5F9EA000A4D845 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A036798F1F5FCF5400A4D845 /* UpdateUserInfoService */,
+				A036798E1F5FCF3C00A4D845 /* RequestUserInfo */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		A03679861F5FBB5B00A4D845 /* MobilePayementOptions */ = {
+			isa = PBXGroup;
+			children = (
+				A03679891F5FBBE500A4D845 /* MpesaPayementViewController */,
+			);
+			name = MobilePayementOptions;
+			sourceTree = "<group>";
+		};
+		A03679891F5FBBE500A4D845 /* MpesaPayementViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A036798A1F5FBC1E00A4D845 /* MpesaPayementViewController.storyboard */,
+				A036798C1F5FC8A100A4D845 /* MpesaPayementViewController.swift */,
+			);
+			name = MpesaPayementViewController;
+			sourceTree = "<group>";
+		};
+		A036798E1F5FCF3C00A4D845 /* RequestUserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A03679811F5F9EC400A4D845 /* RequestUserInfo.swift */,
+				A03679831F5F9ED600A4D845 /* RequestUserInfoDelegate.swift */,
+			);
+			name = RequestUserInfo;
+			sourceTree = "<group>";
+		};
+		A036798F1F5FCF5400A4D845 /* UpdateUserInfoService */ = {
+			isa = PBXGroup;
+			children = (
+				A03679901F5FCF6F00A4D845 /* UpdateUserInfoService.swift */,
+				A03679921F5FCF8100A4D845 /* UpdateUserInfoServiceDelegate.swift */,
+			);
+			name = UpdateUserInfoService;
+			sourceTree = "<group>";
+		};
+		A03679961F5FF1EB00A4D845 /* LogoutService */ = {
+			isa = PBXGroup;
+			children = (
+				A03679971F5FF20C00A4D845 /* LogoutService.swift */,
+				A03679991F5FF21C00A4D845 /* LogoutServiceDelegate.swift */,
+			);
+			name = LogoutService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -360,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A03679181F56E7C000A4D845 /* MainViewController.storyboard in Resources */,
+				A036798B1F5FBC1E00A4D845 /* MpesaPayementViewController.storyboard in Resources */,
 				A03679051F56DB6A00A4D845 /* LaunchScreen.storyboard in Resources */,
 				A03679321F57BC8300A4D845 /* SettingsViewController.storyboard in Resources */,
 				A036792A1F57BA8B00A4D845 /* UserViewController.storyboard in Resources */,
@@ -368,6 +458,7 @@
 				A03679141F56E1D400A4D845 /* Assets.xcassets in Resources */,
 				A03679001F56DB6A00A4D845 /* MapViewController.storyboard in Resources */,
 				A036793D1F57E4FB00A4D845 /* GoogleService-Info.plist in Resources */,
+				A036797B1F5F993700A4D845 /* PayementOptionsViewController.storyboard in Resources */,
 				A03679751F5DD9FC00A4D845 /* TicketDisplayViewController.storyboard in Resources */,
 				A036792C1F57BC3E00A4D845 /* CustomerServiceViewController.storyboard in Resources */,
 				A03679221F57BA2C00A4D845 /* SignUpViewController.storyboard in Resources */,
@@ -430,27 +521,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				A03679541F5AB22900A4D845 /* MainViewController.swift in Sources */,
+				A03679981F5FF20C00A4D845 /* LogoutService.swift in Sources */,
 				A036792E1F57BC4F00A4D845 /* CustomerServiceViewController.swift in Sources */,
+				A036798D1F5FC8A100A4D845 /* MpesaPayementViewController.swift in Sources */,
 				A03679361F57BD5F00A4D845 /* Constants.swift in Sources */,
 				A036794C1F5A787700A4D845 /* LoginServiceDelegate.swift in Sources */,
+				A036797F1F5F9C7500A4D845 /* PaymentOptionTableViewCell.swift in Sources */,
 				A036794E1F5A78CC00A4D845 /* LoginRequest.swift in Sources */,
 				A03679281F57BA7200A4D845 /* UserViewController.swift in Sources */,
 				A036791C1F57B9EE00A4D845 /* LoginViewController.swift in Sources */,
-				A03679731F5D242A00A4D845 /* TicketDisplaytViewController.swift in Sources */,
+				A036799A1F5FF21C00A4D845 /* LogoutServiceDelegate.swift in Sources */,
 				A03679261F57BA5400A4D845 /* TicketViewController.swift in Sources */,
 				A036796F1F5BF82D00A4D845 /* UserTableViewController.swift in Sources */,
+				A03679911F5FCF6F00A4D845 /* UpdateUserInfoService.swift in Sources */,
 				A03679431F583BB600A4D845 /* SignUpServiceDelegate.swift in Sources */,
 				A03679451F5A77DA00A4D845 /* AccessTokenService.swift in Sources */,
+				A036797D1F5F995200A4D845 /* PayementOptionsTableViewController.swift in Sources */,
 				A03679711F5BFEEF00A4D845 /* NameAndPictureTableViewCell.swift in Sources */,
 				A03678FD1F56DB6A00A4D845 /* MapViewController.swift in Sources */,
 				A03678FB1F56DB6A00A4D845 /* AppDelegate.swift in Sources */,
+				A03679821F5F9EC400A4D845 /* RequestUserInfo.swift in Sources */,
 				A036793B1F57DBDE00A4D845 /* TimeUtil.swift in Sources */,
 				A03679771F5DF0D100A4D845 /* TicketDisplayViewController.swift in Sources */,
 				A03679411F583B8000A4D845 /* SignUpService.swift in Sources */,
+				A03679931F5FCF8100A4D845 /* UpdateUserInfoServiceDelegate.swift in Sources */,
 				A03679201F57BA2100A4D845 /* SignUpViewController.swift in Sources */,
 				A036794A1F5A785200A4D845 /* LoginService.swift in Sources */,
 				A03679341F57BCF600A4D845 /* AlertUtil.swift in Sources */,
+				A03679841F5F9ED600A4D845 /* RequestUserInfoDelegate.swift in Sources */,
 				A03679301F57BC6100A4D845 /* SettingsViewController.swift in Sources */,
+				A03679951F5FDD0600A4D845 /* SelectAmountViewController.swift in Sources */,
 				A03679391F57D02300A4D845 /* DartUser.swift in Sources */,
 				A03679471F5A77FE00A4D845 /* AccessTokenServiceDelegate .swift in Sources */,
 				A03679521F5A944100A4D845 /* EmailUtil.swift in Sources */,

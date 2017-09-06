@@ -13,6 +13,7 @@ class AccessTokenService {
     
     func isTokenValid() {
         if let _ = self.retrieveAccessToken(){
+            print("AcessToken" + self.retrieveAccessToken()!)
             accessTokenServiceDelegate?.accessTokenIsValid()
         }else{
             accessTokenServiceDelegate?.accessTokenIsInvalid(message: "Invalid AccessToken")

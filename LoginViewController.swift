@@ -53,10 +53,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AccessTokenSer
     
     func accessTokenIsValid() {
         navTomain()
+        self.loadingIndicator.stopAnimating()
     }
     
     func accessTokenIsInvalid(message: String) {
         // Do nothing
+        self.loadingIndicator.stopAnimating()
     }
     
     func didLoginSuccessfully(loggedInUser: DartUser) {
