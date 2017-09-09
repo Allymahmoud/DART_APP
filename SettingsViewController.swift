@@ -18,6 +18,7 @@ class SettingsViewController: UIViewController, LogoutServiceDelegate {
         self.logoutService = LogoutService()
 
         // Do any additional setup after loading the view.
+        self.logoutService.logoutServiceDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,12 +32,25 @@ class SettingsViewController: UIViewController, LogoutServiceDelegate {
     }
     
     func didLogoutSuccessfully() {
+        /*print("didsuccessfully logout")
+        self.navTologin()
+ */
         accessTokenService.deleteAccessToken()
         self.dismiss(animated: true, completion: nil)
     }
     func failedToLogout(message: String) {
+        /*print("failed to logout")
+        self.navTologin()
+ */
         self.present(AlertUtil.errorAlert(title: "Could Not Logout", message: message), animated: true, completion: nil)
     }
+    
+    func navTologin(){
+        let loginViewController = LoginViewController.storyboardInstance()
+        self.present(loginViewController, animated: true, completion: nil)
+        
+    }
+
 
     
 

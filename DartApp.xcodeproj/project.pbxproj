@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5BA455ACE0C4EEA0049E2324 /* Pods_DartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C8BF22877E20EBDC2A1158 /* Pods_DartApp.framework */; };
+		A00E55361F6023390039122A /* TransactionDisplayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00E55351F6023390039122A /* TransactionDisplayViewController.storyboard */; };
+		A00E55381F6023540039122A /* TransactionDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E55371F6023540039122A /* TransactionDisplayViewController.swift */; };
 		A03678FB1F56DB6A00A4D845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03678FA1F56DB6A00A4D845 /* AppDelegate.swift */; };
 		A03678FD1F56DB6A00A4D845 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03678FC1F56DB6A00A4D845 /* MapViewController.swift */; };
 		A03679001F56DB6A00A4D845 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03678FE1F56DB6A00A4D845 /* MapViewController.storyboard */; };
@@ -62,6 +64,8 @@
 		284BF517967A5CEB8F5334F2 /* Pods-DartApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DartApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DartApp/Pods-DartApp.release.xcconfig"; sourceTree = "<group>"; };
 		33C8BF22877E20EBDC2A1158 /* Pods_DartApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DartApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59906CE033F0904598864363 /* Pods-DartApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DartApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DartApp/Pods-DartApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A00E55351F6023390039122A /* TransactionDisplayViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TransactionDisplayViewController.storyboard; sourceTree = "<group>"; };
+		A00E55371F6023540039122A /* TransactionDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionDisplayViewController.swift; sourceTree = "<group>"; };
 		A03678F71F56DB6A00A4D845 /* DartApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DartApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03678FA1F56DB6A00A4D845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A03678FC1F56DB6A00A4D845 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = DartApp/MapViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A00E55341F6023100039122A /* TransactionDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				A00E55351F6023390039122A /* TransactionDisplayViewController.storyboard */,
+				A00E55371F6023540039122A /* TransactionDisplayViewController.swift */,
+			);
+			name = TransactionDisplay;
+			sourceTree = "<group>";
+		};
 		A03678EE1F56DB6A00A4D845 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +231,7 @@
 		A036790F1F56DBA600A4D845 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				A00E55341F6023100039122A /* TransactionDisplay */,
 				A03679791F5F946300A4D845 /* PayementOptions */,
 				A03679271F57BA7200A4D845 /* UserViewController.swift */,
 				A03679291F57BA8B00A4D845 /* UserViewController.storyboard */,
@@ -460,6 +474,7 @@
 				A036793D1F57E4FB00A4D845 /* GoogleService-Info.plist in Resources */,
 				A036797B1F5F993700A4D845 /* PayementOptionsViewController.storyboard in Resources */,
 				A03679751F5DD9FC00A4D845 /* TicketDisplayViewController.storyboard in Resources */,
+				A00E55361F6023390039122A /* TransactionDisplayViewController.storyboard in Resources */,
 				A036792C1F57BC3E00A4D845 /* CustomerServiceViewController.storyboard in Resources */,
 				A03679221F57BA2C00A4D845 /* SignUpViewController.storyboard in Resources */,
 			);
@@ -530,6 +545,7 @@
 				A036794E1F5A78CC00A4D845 /* LoginRequest.swift in Sources */,
 				A03679281F57BA7200A4D845 /* UserViewController.swift in Sources */,
 				A036791C1F57B9EE00A4D845 /* LoginViewController.swift in Sources */,
+				A00E55381F6023540039122A /* TransactionDisplayViewController.swift in Sources */,
 				A036799A1F5FF21C00A4D845 /* LogoutServiceDelegate.swift in Sources */,
 				A03679261F57BA5400A4D845 /* TicketViewController.swift in Sources */,
 				A036796F1F5BF82D00A4D845 /* UserTableViewController.swift in Sources */,
@@ -683,6 +699,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FM2EY39XWE;
 				INFOPLIST_FILE = DartApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ally.DartApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -699,6 +716,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FM2EY39XWE;
 				INFOPLIST_FILE = DartApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ally.DartApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
