@@ -69,7 +69,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AccessTokenSer
     
     func emailNotVerified(user: Firebase.User) {
         let alertVC = UIAlertController(title: "Error", message: "Sorry. Your email address has not yet been verified. Do you want us to send another verification email to \(String(describing: self.email.text)).", preferredStyle: .alert)
-        let alertActionOkay = UIAlertAction(title: "Okay", style: .default) {
+        let alertActionOkay = UIAlertAction(title: "Resend", style: .default) {
             (_) in
             user.sendEmailVerification(completion: nil)
         }
