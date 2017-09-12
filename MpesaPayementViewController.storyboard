@@ -22,16 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send M-PESA Tsh. 334000.00 to Pay Bill Business number 222XXX. Submit the Confirmation Code below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tW7-QE-c5I">
-                                <rect key="frame" x="16" y="28" width="343" height="88"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="f71-eP-9Vw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SRG-Jh-plP">
                                 <rect key="frame" x="16" y="124" width="343" height="341"/>
                                 <subviews>
@@ -235,6 +225,16 @@
                                     <action selector="completeTransaction:" destination="SdJ-4M-8PA" eventType="touchUpInside" id="pWT-gH-EDW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send M-PESA Tsh. 334000.00 to Pay Bill Business number 222XXX. Submit the Confirmation Code below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tW7-QE-c5I">
+                                <rect key="frame" x="16" y="62" width="343" height="54"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="gO3-mn-xX3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -242,13 +242,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="e7e-oB-GiQ" secondAttribute="trailing" id="8MB-70-Tmb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="SRG-Jh-plP" secondAttribute="leading" id="BMz-bR-QzC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SRG-Jh-plP" secondAttribute="trailing" id="IY0-Py-NGn"/>
-                            <constraint firstItem="tW7-QE-c5I" firstAttribute="top" secondItem="8mv-qP-Nsb" secondAttribute="bottom" constant="8" symbolic="YES" id="eov-b5-mnp"/>
                             <constraint firstItem="cuO-3o-W2G" firstAttribute="top" secondItem="e7e-oB-GiQ" secondAttribute="bottom" constant="24" id="jAL-bS-fH5"/>
                             <constraint firstAttribute="leadingMargin" secondItem="e7e-oB-GiQ" secondAttribute="leading" id="k8K-wd-PHO"/>
                             <constraint firstItem="SRG-Jh-plP" firstAttribute="centerX" secondItem="ULH-fV-A7k" secondAttribute="centerX" id="mkf-j0-PyZ"/>
                             <constraint firstItem="tW7-QE-c5I" firstAttribute="leading" secondItem="SRG-Jh-plP" secondAttribute="leading" id="qbX-OJ-hcY"/>
                             <constraint firstItem="e7e-oB-GiQ" firstAttribute="top" secondItem="SRG-Jh-plP" secondAttribute="bottom" constant="21" id="rJm-5r-sUH"/>
                             <constraint firstItem="cuO-3o-W2G" firstAttribute="centerX" secondItem="ULH-fV-A7k" secondAttribute="centerX" id="w5j-Le-qyx"/>
+                            <constraint firstItem="SRG-Jh-plP" firstAttribute="top" secondItem="tW7-QE-c5I" secondAttribute="bottom" constant="8" id="wYv-aw-DQ7"/>
                             <constraint firstItem="tW7-QE-c5I" firstAttribute="trailing" secondItem="SRG-Jh-plP" secondAttribute="trailing" id="z3l-GS-ptY"/>
                         </constraints>
                     </view>
