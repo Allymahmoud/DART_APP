@@ -129,6 +129,7 @@ class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return pickerData[row]
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 0{
             from.text = pickerData[row]
@@ -152,20 +153,23 @@ class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
     }
     
+    
+    
    
     @IBAction func purchase(_ sender: Any) {
         
         if self.user.balance! > 650 {
             self.configureTripInfo()
-            self.updateUserInfoService.updateUserBalance(balance: (self.user.balance! - 650))
-            self.updateUserInfoService.updateTravelHistory(tripInfo: self.tripInfo)
+            self.presentPurchaseAlert()
+            
      
         }else{
             if let balance = self.user.balance{
-                self.present(AlertUtil.errorAlert(title: "Could Not Perform Transaction", message: "Low balance of" + String(describing: balance) + " " + "Tshs"), animated: true, completion: nil)
+                self.present(AlertUtil.errorAlert(title: "Could Not Perform Transaction", message: "Low balance of " + String(describing: balance) + " " + "Tshs"), animated: true, completion: nil)
             }
         }
     }
+    
     func configureUI(){
         if let balance = self.user.balance{
             self.balance.text = String(describing: balance) + " " + "Tshs"
@@ -180,6 +184,45 @@ class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         ticketDisplayViewController.title = "Ticket Info"
         ticketDisplayViewController.tripInfo = self.tripInfo
         ticketDisplayViewController.clientName = user.name!
+        
+    }
+    
+    func presentPurchaseAlert() {
+        if let station = self.tripInfo.station, let destination = self.tripInfo.destination{
+            let alertController = UIAlertController(title: "Password?", message: "Please input your password to purchase your ticket from \(station) to \(destination)  ", preferredStyle: .alert)
+            
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
+                if let field = alertController.textFields?[0] {
+                    
+                    // check if password match
+                    if field.text == self.user.password{
+                        self.updateUserInfoService.updateUserBalance(balance: (self.user.balance! - 650))
+                        self.updateUserInfoService.updateTravelHistory(tripInfo: self.tripInfo)
+                        
+                    }else{
+                        self.present(AlertUtil.errorAlert(title: "Could Not Perform Transaction", message: "password did not match"), animated: true, completion: nil)
+                        
+                    }
+                    
+                } else {
+                    // user did not fill field
+                }
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+            
+            alertController.addTextField { (textField) in
+                textField.placeholder = "Password"
+                textField.isSecureTextEntry = true
+            }
+            
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+        
         
     }
 }
