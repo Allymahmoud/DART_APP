@@ -30,8 +30,16 @@ class SelectAmountViewController: UIViewController, UITextFieldDelegate {
         }
         else{
             if let convertedAmount = Double(self.amountSelected.text!){
-                self.amount = convertedAmount
-                self.performSegue(withIdentifier: "navToMpesa", sender: nil)
+                
+                if convertedAmount > 50000 || convertedAmount < 2000{
+                    self.present(AlertUtil.errorAlert(title: "Could Not Proceed", message: "Invalid Amount. Please enter any amount from 2000 Tshs to 50,000 Tshs"), animated: true, completion: nil)
+                }
+                else{
+                    self.amount = convertedAmount
+                    self.performSegue(withIdentifier: "navToMpesa", sender: nil)
+                    
+                }
+                
             }
             else{
                 self.present(AlertUtil.errorAlert(title: "Could Not Proceed", message: "Invalid amount entered"), animated: true, completion: nil)

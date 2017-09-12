@@ -22,21 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send M-PESA Tsh. 334000.00 to Pay Bill Business number 222XXX. Submit the Confirmation Code below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tW7-QE-c5I">
-                                <rect key="frame" x="16" y="28" width="343" height="88"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="f71-eP-9Vw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SRG-Jh-plP">
-                                <rect key="frame" x="16" y="124" width="343" height="341"/>
+                                <rect key="frame" x="16" y="134" width="343" height="358"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send M-PESA Tsh. 334000.00 to Pay Bill Business number 222XXX. Submit the Confirmation Code below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tW7-QE-c5I">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="57"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="57" id="gO3-mn-xX3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Dial *150*00# on your phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cb-1H-sF6">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="57" width="343" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="St0-LS-caj"/>
@@ -46,7 +46,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Select Pay Bill option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axj-D2-JeY">
-                                        <rect key="frame" x="0.0" y="30" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="87" width="343" height="30"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="o3R-RP-oLF"/>
@@ -56,17 +56,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Enter Business no. 222XXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FE-dV-0nq">
-                                        <rect key="frame" x="0.0" y="60" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="117" width="343" height="20"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Ui5-9p-b4Y"/>
+                                            <constraint firstAttribute="height" constant="20" id="Ui5-9p-b4Y"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Enter DartApp for Account no." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WJ-Yp-vab">
-                                        <rect key="frame" x="0.0" y="90" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="137" width="343" height="30"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="rVm-gB-0gT"/>
@@ -76,7 +76,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFE-fC-vbL">
-                                        <rect key="frame" x="0.0" y="120" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="167" width="343" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. Enter the Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbS-cr-R6u">
                                                 <rect key="frame" x="0.0" y="0.0" width="168" height="30"/>
@@ -105,37 +105,37 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6. Enter your M-PESA PIN and Press 1 to confirm or 2 to decline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUQ-Xn-5yW">
-                                        <rect key="frame" x="0.0" y="150" width="343" height="60"/>
+                                        <rect key="frame" x="0.0" y="197" width="343" height="50"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="vPT-QM-F8f"/>
+                                            <constraint firstAttribute="height" constant="50" id="vPT-QM-F8f"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7. You will receive a confirmation SMS from M-PESA with a Confirmation Code" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moz-NG-jaw">
-                                        <rect key="frame" x="0.0" y="210" width="343" height="41"/>
+                                        <rect key="frame" x="0.0" y="247" width="343" height="41"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8. After you receive the confirmation SMS, enter your phone number and the Confirmation Code" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeF-tj-zX9">
-                                        <rect key="frame" x="0.0" y="251" width="343" height="60"/>
+                                        <rect key="frame" x="0.0" y="288" width="343" height="50"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="6Zb-JK-9qJ"/>
+                                            <constraint firstAttribute="height" constant="50" id="6Zb-JK-9qJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9. Click on Complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5C2-OM-3m7">
-                                        <rect key="frame" x="0.0" y="311" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="338" width="343" height="20"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="5DV-fB-eY7"/>
+                                            <constraint firstAttribute="height" constant="20" id="5DV-fB-eY7"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -145,7 +145,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e7e-oB-GiQ">
-                                <rect key="frame" x="16" y="486" width="343" height="80"/>
+                                <rect key="frame" x="16" y="513" width="343" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3r-Nc-eVV">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="35"/>
@@ -228,7 +228,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuO-3o-W2G">
-                                <rect key="frame" x="152" y="590" width="71" height="30"/>
+                                <rect key="frame" x="152" y="617" width="71" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Complete"/>
                                 <connections>
@@ -238,18 +238,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wbh-S3-TlG" firstAttribute="top" secondItem="cuO-3o-W2G" secondAttribute="bottom" constant="47" id="5hn-fS-yVZ"/>
+                            <constraint firstItem="wbh-S3-TlG" firstAttribute="top" secondItem="cuO-3o-W2G" secondAttribute="bottom" constant="20" id="5hn-fS-yVZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e7e-oB-GiQ" secondAttribute="trailing" id="8MB-70-Tmb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="SRG-Jh-plP" secondAttribute="leading" id="BMz-bR-QzC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SRG-Jh-plP" secondAttribute="trailing" id="IY0-Py-NGn"/>
-                            <constraint firstItem="tW7-QE-c5I" firstAttribute="top" secondItem="8mv-qP-Nsb" secondAttribute="bottom" constant="8" symbolic="YES" id="eov-b5-mnp"/>
                             <constraint firstItem="cuO-3o-W2G" firstAttribute="top" secondItem="e7e-oB-GiQ" secondAttribute="bottom" constant="24" id="jAL-bS-fH5"/>
                             <constraint firstAttribute="leadingMargin" secondItem="e7e-oB-GiQ" secondAttribute="leading" id="k8K-wd-PHO"/>
                             <constraint firstItem="SRG-Jh-plP" firstAttribute="centerX" secondItem="ULH-fV-A7k" secondAttribute="centerX" id="mkf-j0-PyZ"/>
-                            <constraint firstItem="tW7-QE-c5I" firstAttribute="leading" secondItem="SRG-Jh-plP" secondAttribute="leading" id="qbX-OJ-hcY"/>
                             <constraint firstItem="e7e-oB-GiQ" firstAttribute="top" secondItem="SRG-Jh-plP" secondAttribute="bottom" constant="21" id="rJm-5r-sUH"/>
                             <constraint firstItem="cuO-3o-W2G" firstAttribute="centerX" secondItem="ULH-fV-A7k" secondAttribute="centerX" id="w5j-Le-qyx"/>
-                            <constraint firstItem="tW7-QE-c5I" firstAttribute="trailing" secondItem="SRG-Jh-plP" secondAttribute="trailing" id="z3l-GS-ptY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -261,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahQ-OC-DkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127.2" y="-45.42728635682159"/>
+            <point key="canvasLocation" x="-566" y="-224"/>
         </scene>
     </scenes>
 </document>

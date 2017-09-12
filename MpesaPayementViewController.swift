@@ -43,6 +43,7 @@ class MpesaPayementViewController: UIViewController, RequestUserInfoDelegate, Up
     
     func configureUI(){
         self.topMessage.text = "Send M-PESA Tsh." + String(describing:self.amount) + " to Pay Bill Business number 222XXX. Submit the Confirmation Code below."
+        self.AmountSelected.text = String(describing:self.amount)
         
         if let userPhoneNo = user.phoneNumber {
             if userPhoneNo.characters.count >= 9{
@@ -65,10 +66,11 @@ class MpesaPayementViewController: UIViewController, RequestUserInfoDelegate, Up
     func didSuccesfullyUpdateUserInfo() {
         print("successfuly updated balance and transaction")
         
-        let alertVC = UIAlertController(title: "Success", message: "You have successfully completed your Transaction", preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Success", message: "You have successfully added Tsh. \(self.amount)", preferredStyle: .alert)
         let alertActionOkay = UIAlertAction(title: "Dismiss", style: .default) {
             (_) in
-            self.navigationController?.popViewController(animated: true)
+            
+           self.popBack(4)
         }
         alertVC.addAction(alertActionOkay)
         self.present(alertVC, animated: true, completion: nil)
@@ -77,6 +79,15 @@ class MpesaPayementViewController: UIViewController, RequestUserInfoDelegate, Up
         self.present(AlertUtil.errorAlert(title: "Ooops! Something Went Wrong", message: message), animated: true, completion: nil)
     }
     
+    /// pop back n viewcontroller
+    func popBack(_ nb: Int) {
+        if let viewControllers: [UIViewController] = self.navigationController?.viewControllers {
+            guard viewControllers.count < nb else {
+                self.navigationController?.popToViewController(viewControllers[viewControllers.count - nb], animated: true)
+                return
+            }
+        }
+    }
     
 
     @IBAction func completeTransaction(_ sender: Any) {

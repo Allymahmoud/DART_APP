@@ -15,9 +15,10 @@ class SettingsViewController: UIViewController, LogoutServiceDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.logoutService = LogoutService()
-
+        self.navigationItem.title = "Settings"
+        
         // Do any additional setup after loading the view.
+        self.logoutService = LogoutService()
         self.logoutService.logoutServiceDelegate = self
     }
 
