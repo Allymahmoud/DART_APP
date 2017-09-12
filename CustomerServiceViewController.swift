@@ -12,6 +12,7 @@ class CustomerServiceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Customer Service"
 
         // Do any additional setup after loading the view.
     }

@@ -39,6 +39,7 @@ class UserTableViewController: UITableViewController {
         super.viewDidLoad()
         
         ref = Database.database().reference(fromURL: Constants.API.BaseUrl)
+        navigationItem.title = "My Account"
         
 
 
@@ -213,13 +214,27 @@ class UserTableViewController: UITableViewController {
             return cell
             
         case 5:
+            user.transactionHistory.sort { TimeUtil.returnDate(stringDate: $0.time!)  > TimeUtil.returnDate(stringDate: $1.time!) }
+            /*
+            if user.transactionHistory.count > 5{
+                print("no of transaction before \(user.transactionHistory.count)")
+                let noOfelements = user.transactionHistory.count
+                user.transactionHistory.removeSubrange(5..<noOfelements)
+                
+            }
+            print("no of transaction after \(user.transactionHistory.count)")
+            */
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfo", for: indexPath)
             cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
             cell.textLabel!.font = UIFont(name: "Helvetica", size: 13)!
             cell.detailTextLabel!.font = UIFont(name: "Helvetica", size: 13)!
             
-            cell.textLabel?.text = user.transactionHistory[indexPath.row].time
-            cell.detailTextLabel?.text = user.transactionHistory[indexPath.row].phoneNumber
+            if let amountAdded = user.transactionHistory[indexPath.row].amountAdded{
+                cell.textLabel?.text = "Tsh. \(amountAdded)"
+                cell.detailTextLabel?.text = user.transactionHistory[indexPath.row].time!
+                
+            }
+            
             
             return cell
             

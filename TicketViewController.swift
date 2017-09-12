@@ -34,6 +34,7 @@ class TicketViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Purchase Ticket"
         
         self.requestUserInfo = RequestUserInfo()
         self.requestUserInfo.requestUserInfoDelegate = self
