@@ -195,7 +195,6 @@ class UserTableViewController: UITableViewController {
             
             return cell
         case 4:
-            user.travelHistory.sort { TimeUtil.returnDate(stringDate: $0.validFrom!)  > TimeUtil.returnDate(stringDate: $1.validFrom!) }
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfo", for: indexPath)
             cell.textLabel!.font = UIFont(name: "Helvetica", size: 13)!
@@ -214,7 +213,8 @@ class UserTableViewController: UITableViewController {
             return cell
             
         case 5:
-            user.transactionHistory.sort { TimeUtil.returnDate(stringDate: $0.time!)  > TimeUtil.returnDate(stringDate: $1.time!) }
+            
+            
             /*
             if user.transactionHistory.count > 5{
                 print("no of transaction before \(user.transactionHistory.count)")
