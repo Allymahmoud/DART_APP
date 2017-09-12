@@ -85,8 +85,21 @@ class DartUser {
                 let transactionInfo = Transaction.init(dictionary: value as! [String : AnyObject])
                 allTransaction.append(transactionInfo)
             }
-            self.transactionHistory = allTransaction
+            allTransaction.sort { TimeUtil.returnDate(stringDate: $0.time!)  > TimeUtil.returnDate(stringDate: $1.time!) }
             
+            if allTransaction.count > 5{
+                var i: Int = 0
+                while i < 5{
+                    self.transactionHistory.append(allTransaction[i])
+                    i += 1
+                }
+                
+            }
+            else{
+                self.transactionHistory = allTransaction
+            }
+            
+      
         }
         
         if let tripDictionary = dictionary["travelHistory"] as? [String: AnyObject] {
@@ -95,7 +108,21 @@ class DartUser {
                 let tripInfo = TripInfo.init(dictionary: value as! [String : AnyObject])
                 allTrips.append(tripInfo)
             }
-            self.travelHistory = allTrips
+            allTrips.sort { TimeUtil.returnDate(stringDate: $0.validFrom!)  > TimeUtil.returnDate(stringDate: $1.validFrom!) }
+            if allTrips.count > 5{
+                var i: Int = 0
+                while i < 5{
+                    self.travelHistory.append(allTrips[i])
+                    i += 1
+                }
+                
+            }
+            else{
+                self.travelHistory = allTrips
+                
+            }
+            
+            
             
         }
 
